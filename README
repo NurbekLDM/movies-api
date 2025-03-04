@@ -1,0 +1,32 @@
+# Movies API
+
+A simple movie management API built with Node.js and Redis.
+
+## How to Use
+
+1. Install dependencies:  
+   npm install
+2. Set environment variables for Redis connection.
+3. Run the server:  
+   npm start
+
+## Endpoints
+
+- GET /api/movies/all  
+  Returns the movies (supports pagination with ?page=1,..,5).
+
+## Searching by ID
+
+Use the following endpoint to get a specific movie by its ID:
+GET /api/movies/:id
+
+## Pagination
+
+There are 5 pages in the database.  
+Example:  
+GET /api/movies/all?page=2
+
+## Notes
+
+- Each page is stored in JSON format inside Redis.
+- For demonstration and learning purposes.
