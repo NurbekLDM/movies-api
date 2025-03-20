@@ -4,6 +4,7 @@ const Redis = require("ioredis");
 const movieRoutes = require("./routes/movies");
 const app = express();
 const PORT = 5000;
+const cors = require("cors");
 
 
 const redisClient = new Redis({
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(cors())
 app.use(express.json());
 
 app.use("/api/movies", movieRoutes);
